@@ -1,0 +1,36 @@
+set terminal pngcairo enhanced color size 800,600; # Set terminal to pngcairo for better quality
+
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 # Define line style for Mt
+set style line 2 lc rgb '#dd181f' lt 1 lw 2 # Define line style for Pf
+set style line 3 lc rgb '#00FF00' lt 1 lw 2 # Define line style for Rr
+set style line 4 lc rgb '#FFA500' lt 1 lw 2 # Define line style for Pss
+
+
+set output "ThroughPut_MT.png"
+set title "SINR and Instantaneous Throughput Graph - MT 10m/s"
+set xlabel "Time"
+set ylabel "Value"
+plot "mt-fullbuffer322.txt" using 1:2 with lines linestyle 1 title "Throughput", \
+     "mt-fullbuffer32.txt" using 1:2 with lines linestyle 2 title "SINR"
+
+
+set output "ThroughPut_PF.png"
+set title "SINR and Instantaneous Throughput Graph - PF 10m/s"
+set xlabel "Time"
+set ylabel "Value"
+plot "pf-fullbuffer302.txt" using 1:2 with lines linestyle 3 title "Throughput", \
+     "pf-fullbuffer30.txt" using 1:2 with lines linestyle 1 title "SINR"
+
+set output "ThroughPut_PSS.png"
+set title "SINR and Instantaneous Throughput Graph - PSS 10m/s"
+set xlabel "Time"
+set ylabel "Value"
+plot "pssf-fullbuffer312.txt" using 1:2 with lines linestyle 4 title "Throughput", \
+     "pssf-fullbuffer31.txt" using 1:2 with lines linestyle 1 title "SINR"
+
+set output "ThroughPut_RR.png"
+set title "SINR and Instantaneous Throughput Graph - RR 10m/s"
+set xlabel "Time"
+set ylabel "Value"
+plot "rr-fullbuffer332.txt" using 1:2 with lines linestyle 2 title "Throughput", \
+     "rr-fullbuffer33.txt" using 1:2 with lines linestyle 3 title "SINR"

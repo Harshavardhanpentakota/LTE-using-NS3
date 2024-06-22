@@ -54,8 +54,8 @@ Also, ConstantPositionMobilityModel (for 0 m/s) / RandomWalk2dMobilityModel (for
 I have also used Flowmonitor to get the Aggregate System Throughput.
 
 To effiently run the asg2 file in a single click, i.e., without changing the seed value & scheduler parameters every time, use the following method-
--  Create a shell file in that include all the necessary command line parameters like input & output file name, schduler type, seed value etc. (checkout in [runner.sh](https://github.com/Harshavardhanpentakota/LTE-using-NS3/blob/main/ns3%20ques2%200ms/runner.sh))
--  You should run for 0ms and 10ms so in total 40 files(for 4 scheduler and 5 seed values) will be genrated, after successfull running code you will get all the aggregrate values.
+-  Create a shell file which should include all the necessary command line parameters like input & output file name, schduler type, seed value etc. (checkout in [runner.sh](https://github.com/Harshavardhanpentakota/LTE-using-NS3/blob/main/ns3%20ques2%200ms/runner.sh))
+-  You should run the shell script for both 0ms and 10ms (which you can also run in one click by giving parameter) so in total 40 files (for 4 scheduler and 5 seed values) will be genrated, after successfull running code you will get all the aggregrate values.
 -  use all the aggregrate throughtput values to plot the graph, i have used excel to plot the bar graph which is effient to plot from tables (i have used table format for better understanding).
 
 

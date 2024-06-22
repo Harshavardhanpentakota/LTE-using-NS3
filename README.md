@@ -51,4 +51,36 @@ The Colour Gradient Bar shows the intensity of SINR values over a particular are
 
 ###### Necessary implementation of all other parameters are done, here we start the actual simulation with mobility of UEs and complex implementations like Handovers, Scheduling algorithms, Seeds etc
 
+
+
 <img src="ns3 ques2 0ms/file_2024-04-24_21.04.05(1).png"/>
+
+
+
+#### Graph 4: SINR/Instantaneous throughput values for UE 0 in the simulation for one seed (RngRun1). X-axis: Time in msec, Y-axis: SINR and Instantaneous throughputs of UE0 for Speed of 0 m/s for all fourschedulers for full buffer scenario.
+###### Calculated SINR/Instantaneous throughput values for a particular UE in the simulation for Speed of 0 m/s for all fourschedulers.
+###### It's a 2 line Graph, one line is for SINR values, another line is for Instantaneous Throughput values.
+
+I have used PacketSink module to get the Total Received Bytes until that second. To calculate the Instantaneous throughput , i.e., Throughput at that Particular second, i have stored Total Received Bytes for last second and subtracted it from current Total Received Bytes. Simply\
+> uint64_t presentThroughput = sink->GetTotalRx();\
+> Instantaneous Throughput =  presentThroughput - prevThroughput[index]\
+> prevThroughput[index] = presentThroughput;
+
+Therefore, Instantaneous Throughput with time will be printed.
+
+For the SINR values, i have made changes in the Lte-ue-phy.cc of NS3 src documentation, It is in src > lte > model > lte-ue-phy.cc
+(you can simply replace the file - checkout in [lte-ue-phy.cc](https://github.com/Harshavardhanpentakota/LTE-using-NS3/blob/main/ns3%20ques%204/lte-ue-phy.cc)
+Modified so that it can print the SINR values with the time.
+
+Command line to run the asg4 file -
+> ./ns3 run asg4 > sample.txt
+
+The SINR with time will be printed in the sample.txt whereas the Instantaneous Throughput with time will be printed in the running terminal.\ 
+i have used gnuplot to combine both the files data to plot the file (checkout in [gnuplot](https://github.com/Harshavardhanpentakota/LTE-using-NS3/blob/main/ns3%20ques%204/gnuplot))\
+Here's my result 👇.\
+<img src="ns3 ques 4/ThroughPut_MT.png"/>
+<img src="ns3 ques 4/ThroughPut_PSS.png"/>
+<img src="ns3 ques 4/ThroughPut_PF.png"/>
+<img src="ns3 ques 4/ThroughPut_RR.png"/>
+
+######  Priority set scheduler (PSS) allocates the resources depending upon their priority. Each UE is allocated a priority and the process with the highest priority is executed first. Therefore, Instantaneous Throughput will be greater for this algorithm. Whereas Average Aggregate System throughput will be comparatively lesser.

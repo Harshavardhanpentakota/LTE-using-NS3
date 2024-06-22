@@ -1,12 +1,9 @@
 # 📶 LTE - using - NS3 🌐
 > NS3 LTE SIMULATION
 
-The objective of this Project is to understand and change code of LTE Schedulers algorithms in
-NS-3 for necessary stats collection. Further, I also evaluated and compared the performance of
-different Scheduler algorithms.
+The objective of this project is to understand and modify the code of LTE Schedulers algorithms in NS-3 for necessary statistics collection. Furthermore, I evaluated and compared the performance of different Scheduler algorithms.
 
-Created a topology as shown in the below figure. P-GW and Remote Host are added to this topology and
-connected them with point-to-point 1 Gbps links.
+Created a topology as shown in the figure below. P-GW and Remote Host are added to this topology and connected them with point-to-point 1 Gbps links.
 
 ![topology.png](topology.png)
 
@@ -14,14 +11,14 @@ connected them with point-to-point 1 Gbps links.
 
 | 	Simulation Parameter	          | 	Value	                                                    |
 | 	      :-----:	                  | 	:-----:	                                                    |
-| 	    Number of UEs                 | 	10 per eNB; 1 Downlink UDP Flow per UEfrom the Remote Host	|
+| 	    Number of UEs                 | 	10 per eNB; 1 Downlink UDP Flow per UE from the Remote Host	|
 | 	       Number of eNBs	          | 	4	|
 | 	Inter distance between eNBs	      | 	5 KM	|
 | 	eNB Tx Power	                  | 	40 dBm (10 Watt)	|
 | 	Application Type	              | 	UDP	|
 |    Full buffer case (UDP Traffic)   |  1500 bytes per every 1ms by UDP; Each UE is configured with 1 DL UDP flow of 12Mbps|
 | Non Full buffer case (UDP Traffic)  | 1500 bytes per every 10ms by UDP; EachUE is configured with 1 DL UDP flow of 1.2Mbps|
-| 	UE mobility speeds	              | 0, 10 m/s; where in a given expt all UEs are configured with one of these two speeds|
+| 	UE mobility speeds	              | 0, 10 m/s; where in a given experiment all UEs are configured with one of these two speeds|
 | 	UE mobility model	              | 	RandomWalk2d Mobility	|
 |    UEs placement in a Cell          |  Random disc placement within 500m radius of eNB|
 |    # of RBs                         |  50 in DL and 50 in UL (LTE FDD) |
